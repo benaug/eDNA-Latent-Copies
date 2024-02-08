@@ -25,6 +25,7 @@ eta.q <- 0 #minimum measurement allowed in quantification process on scale of ab
 #can set this to limit false positives, or better meet model assumptions if they break down at very low copy number
 
 data <- simAR1(beta0=beta0,sdlog.C.time=sdlog.C.time,rho=rho,
+               sdlog.C.sample=sdlog.C.sample,
                gamma0=gamma0,gamma1=gamma1,sdlog.y=sdlog.y,
                times=times,J.time=J.time,K.time=K.time,
                volume.rep=volume.rep,eta.q=eta.q)
@@ -112,7 +113,7 @@ Cmcmc <- compileNimble(Rmcmc, project = Rmodel)
 
 # Run the model
 start.time2 <- Sys.time()
-Cmcmc$run(10000,reset=FALSE) #short run for demonstration. Can run repeatedly to get more posterior samples.1end.time <- Sys.time()
+Cmcmc$run(10000,reset=FALSE) #short run for demonstration. Can run repeatedly to get more posterior samples.
 end.time <- Sys.time()
 end.time - start.time  # total time for compilation, replacing samplers, and fitting
 end.time - start.time2 # post-compilation run time

@@ -1,4 +1,5 @@
-simAR1 <- function(beta0=NA,sdlog.C.time=NA,rho=NA,gamma0=NA,gamma1=NA,sdlog.y=NA,
+simAR1 <- function(beta0=NA,sdlog.C.time=NA,rho=NA,sdlog.C.sample=NA,
+                   gamma0=NA,gamma1=NA,sdlog.y=NA,
                    times=NA,J.time=NA,K.time=NA,volume.rep=NA,eta.q=NA){
   M <- length(times)
   J <- max(J.time)
