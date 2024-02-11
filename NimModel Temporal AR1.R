@@ -31,7 +31,7 @@ NimModel <- nimbleCode({
       # unit.sample[t,j] ~ dnorm(0,sd=1)
       # log(C.sample[t,j]) <- log(C.time[t]) + unit.sample[t,j]*sdlog.C.sample
       #Convert sample concentration to mean number of copies in sample
-      lambda.rep[t,j] <- C.sample[t,j]*volume.rep[t,j] #expected N in sample
+      lambda.rep[t,j] <- C.sample[t,j]*volume.rep[t,j] #expected N in replicate
       #realized N in replicates
       for(k in 1:K.time[t,j]){
         N.rep[t,j,k] ~ dpois(lambda.rep[t,j])
