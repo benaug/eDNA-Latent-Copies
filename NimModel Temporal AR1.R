@@ -20,7 +20,7 @@ NimModel <- nimbleCode({
   for(i in 1:M) {
     log.mu.time[i] <- beta0
     for(j in 1:M) {
-      Sigma[i,j] <- sdlog.C.time^2*(1*(equals(i,j) + (1-equals(i,j))*pow(rho,lag[i,j])))
+      Sigma[i,j] <- sdlog.C.time^2*(equals(i,j) + (1-equals(i,j))*pow(rho,lag[i,j]))
     }
   }
   log(C.time[1:M]) ~ dmnorm(log.mu.time[1:M],cov=Sigma[1:M,1:M])
