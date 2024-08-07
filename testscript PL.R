@@ -31,7 +31,7 @@ mean.Q <- 0.01992154 #site-level discharge (m^3/s)
 mean.v <- 0.245908 #mean stream velocity (m/s)
 
 Q <- rep(mean.Q,M) #using mean of each for all sites for simplicity
-v <- mean.v
+v <- rep(mean.v,M)
 
 data <- sim.data(M=M,J=J,K=K,dist=dist,volume.rep=volume.rep,eta.q=eta.q,
                  p0=p0,lambda.site=lambda.site,theta.site=theta.site,
